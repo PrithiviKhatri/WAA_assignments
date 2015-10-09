@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -14,19 +15,26 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class Student {
 	
+	
 	private int id;
 	
- 	private String firstName = null;
+	@NotEmpty
+ 	@Size(min=4, max=50, message="{Size.name.validation}") 	
+	private String firstName;
 	
- 	private  String lastName  = null;
+	@NotEmpty
+ 	@Size(min=4, max=50, message="{Size.name.validation}") 	
+ 	private  String lastName ;
 	
- 	private String email = null;
+	@Pattern(regexp="^.*@[a-z].*\\.com",message="{Pattern.email}")
+	private String email ;
 	
  	private String gender = null;
 	
     private Date birthday;
  
-	private Phone phone;
+	@Valid
+    private Phone phone;
 
   	public int getId() {
 		return id;

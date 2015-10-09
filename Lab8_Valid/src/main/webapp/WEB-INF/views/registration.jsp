@@ -19,28 +19,48 @@
 		<fieldset>
 			<label>Id: </label>
 			<form:input type="text" path="id" />
+			<div style="text-align: center;">
+				<form:errors path="id" cssStyle="color : red;" />
+			</div>
+
 			<br> <label>Student FirstName: </label>
 			<form:input type="text" path="firstName" />
+			<div style="text-align: center;">
+				<form:errors path="firstName" cssStyle="color : red;" />
+			</div>
+
+
 			<br> <label>Student LastName: </label>
 			<form:input type="text" path="lastName" />
+			<div style="text-align: center;">
+				<form:errors path="lastName" cssStyle="color : red;" />
+			</div>
+
+
 			<br> <label>Student Email:</label>
 			<form:input type="text" path="email" />
-			<br> <label>Student BirthDate:</label>
-			<form:input  path="birthday" id="birthdate"/>
+			<div style="text-align: center;">
+				<form:errors path="email" cssStyle="color : red;" />
+			</div>
+
+
+			<%-- <br> <label>Student BirthDate:</label>
+			<form:input  path="birthday" id="birthday" /> --%>
+
 			<br> <label>Student Phone:</label>
-			<form:input type="text" path="phone.area" />
+			<form:input type="text" path="phone.area"  />
+			-<form:input type="text" path="phone.prefix"  />
+			-<form:input type="text" path="phone.number"  />
+			<div style="text-align: center;">
+				<form:errors path="phone/*" cssStyle="color : red;" />
+			</div>
 
-			<form:input type="text" path="phone.prefix" />
 
-			<form:input type="text" path="phone.number" />
-			
- 	
- 		  	
-       
-   
-        
-			
-			
+
+
+
+
+
 			<br> <br> <br> <input type="submit" value="Register">
 		</fieldset>
 
